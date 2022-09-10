@@ -1,49 +1,55 @@
+$headergreen:#243E36; /*VARIABLES*/
+$setff:Arial, Helvetica, sans-serif;
+$dgreyright:rgb(182, 182, 182);
+$lgreyleft:rgb(216, 216, 216);
+$dfpadding: 30px;
 
-
-
-
+@mixin topbackgroundLR { /*MIXIN*/
+    font-family:$setff;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    justify-content:center;
+}
 
 .roundedimg {
     border-radius: 50%;
   }
 
 .topbackground {
-    background-color:#00ffb3;
+    padding: $dfpadding;
+    background-color:$headergreen;
     height: 20%;
-    display:inline;
-}
-
-.topbackground-left {
-    display:flex;
-    background-color:#243E36;
-}
-
-.topbackground-right {
-    font-family: Arial, Helvetica, sans-serif;
     display:flex;
     align-items:center;
-    flex-direction:column
+}
+
+.topbackground-left {  /*INCLUDE*/
+    @include topbackgroundLR()
+}
+
+.topbackground-right {  /*INCLUDE*/
+    @include topbackgroundLR()
 }
 
 .mainbody {
     display:flex;
-   
 }
 
 .bodyleftside {
-    font-family: Arial, Helvetica, sans-serif;
+    @extend .mainbody;  /*EXTEND*/
+    font-family: setff; 
     width: 50%;
-    display:flex;
     flex-direction:column;
-    background-color:rgb(216, 216, 216);
-    padding:30px;
+    background-color:$lgreyleft;
+    padding:$dfpadding;
 }
 
 .bodyrightside {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:$setff;
     width: 50%;
     display:flex;
     flex-direction:column;
-    padding:30px;
-    background-color:rgb(182, 182, 182);
+    padding:$dfpadding;
+    background-color:$dgreyright;
 }
