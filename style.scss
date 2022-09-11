@@ -12,6 +12,10 @@ $dfpadding: 30px;
     justify-content:center;
 }
 
+a {
+    text-decoration:none;
+}
+
 .roundedimg {
     border-radius: 50%;
   }
@@ -38,7 +42,7 @@ $dfpadding: 30px;
 
 .bodyleftside {
     @extend .mainbody;  /*EXTEND*/
-    font-family: setff; 
+    font-family: $setff; 
     width: 50%;
     flex-direction:column;
     background-color:$lgreyleft;
@@ -46,7 +50,7 @@ $dfpadding: 30px;
 }
 
 .bodyrightside {
-    font-family:$setff;
+    font-family: Arial, Helvetica, sans-serif;
     width: 50%;
     display:flex;
     flex-direction:column;
